@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>WebSocket Test</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="dependencies/arrowforV8.css" media="screen" type="text/css" />
+	<link rel="stylesheet" href="dependencies/general.css" media="screen" type="text/css" />
+	<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main.css?v=1.0" />
+	<script src="dependencies/jquery-3.2.1.js"></script>
+	</head>
+	
+	
+	<body>
+		<div style="text-align:center;clear:both;"></div>
+		<div class='speed-table'><img width="200" height="200" border="0" src="pic/speed_table.png"/></div>
+		<div class='speed-pin'><img width="200" height="200" border="0" src="pic/speed_pin.png"/></div>
+		<div class='map'></div>
+		<div class="leftAreaBG"></div>
+		<div class="rightAreaBG"></div>
+		<div class="ImageDiv"><input id="ImageInput" type="image" src="pic/robotcar.png" width="300" height="250" align="absmiddle" border="0" /></div>
+		
+		<div class="ConnectArea">
+		<p><span>Connect statue:</span><input id="stateGreen" type="image" src="pic/connect.png" width="25" height="20" align="absmiddle" style="padding-left:10px;opacity:0.3;" border="0" /><input id="stateRed" type="image" src="pic/disconnect.png" width="25" height="20" align="absmiddle" style="padding-left:10px;opacity:1.0;" border="0" /></p>
+		<p><span>Connect:</span><input type="image" src="pic/go.png" width="60" height="34" border="0" style="padding-left:10px; padding-right:20px;" align="absmiddle" onclick="OnConnect()" /><span>Close:</span><input type="image" src="pic/close.png" width="30" height="25" border="0" style="padding-left:10px" align="absmiddle" onclick="websocket.onclose()" />
+		<p><span>Receive:</span><input id="result" type="text" style="width:250px;border-style:none;background-color:transparent;padding-left:10px;color:#6C3365" value=""/></p>
+		</div>
+		
+		<div class="StateArea">
+		<p><span>Robot Name:</span><input id="robotNameState" type="text" style="padding-left:10px;border-style:none;background-color:transparent;width:100px;color:#6C3365;" value="Car"/></p>
+		<p><span>GPS:</span><input id="latitude" type="text" style="width:70px;border-style:none;background-color:transparent;padding-left:5px;color:#6C3365" value=""/><input id="longitude" type="text" style="width:70px;border-style:none;background-color:transparent;;color:#6C3365" value=""/><input id="altitude" type="text" style="width:70px;border-style:none;background-color:transparent;color:#6C3365" value=""/></p>
+		<p><span>Linear speed:</span><input id="linearspeed" type="text" style="width:80px;border-style:none;background-color:transparent;padding-left:5px;color:#6C3365" value=""/></p>
+		</div>
+		
+		<div class="CommandArea">
+		<p><span>Robot Name:</span><select id="robotName" style="padding-left:10px;border-style:none;background-color:rgba(255,255,255,0.2);width:70px;color:#6C3365;">
+		<option selected value="1">Car</option>
+		<option value="2">Boat</option>
+		</select>
+		<input type="image" src="pic/send.png" width="60" height="35" border="0" style="padding-left:10px; padding-right:20px;" align="absmiddle" onclick="GetRobotInfo(document.getElementById('robotName').value)"  /></p>
+		
+		<div class="button-group">
+		<input id="en" type="button" class="button" value="English" />
+		<input id="zh_en" type="button" class="button" value="English-中文" />
+		<input id="zh_cn" type="button" class="button" value="中文" />
+		</div>
+		
+		<span>Type:</span><select id="type" style="padding-left:10px;border-style:none;background-color:rgba(255,255,255,0.2);width:100px;color:#6C3365;">
+		<option selected value="GPS">GPS</option>
+		<option value="Lin">Linear speed</option>
+		<option value="Ori">Orientation</option>
+		</select>
+		
+		<p><span>Goal x:</span><input id="gps_la_change" type="text" style="padding-left:10px;border-style:none;width:100px;background-color:rgba(255,255,255,0.2);color:#6C3365;" value="0.0"/></p>
+		<p><span>Goal y:</span><input id="gps_lo_change" type="text" style="padding-left:10px;border-style:none;width:100px;background-color:rgba(255,255,255,0.2);color:#6C3365;" value="0.0"/><input type="image" src="pic/check.png" width="60" height="35" border="0" style="padding-left:10px; padding-right:20px;" align="absmiddle" onclick="Setrobot(document.getElementById('type').value,document.getElementById('gps_la_change').value,document.getElementById('gps_lo_change').value,document.getElementById('gps_al_change').value)" /></p>
+		<p><span>Goal z:</span><input id="gps_al_change" type="text" style="padding-left:10px;border-style:none;width:100px;background-color:rgba(255,255,255,0.2);color:#6C3365;" value="0.0"/></p>
+		<p><span>Hit:</span><input id="hit" type="text" style="padding-left:10px;border-style:none;width:200px;background-color:rgba(255,255,255,0.2);color:#6C3365;" value="Please enter number"/></p>
+		</div>
+		
+
+		
+	</body>
+	
+	<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.2&key=14a318a87e043d176c12e2dbb1bb183b"></script> 
+	<script src="dependencies/functionJS_Amap_image.js"></script>
+
+</html>

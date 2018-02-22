@@ -1,0 +1,144 @@
+html,
+
+body{
+		background-color:#E1E9E9;
+		background-position:center;
+		background-size:550px 550px;
+		background-repeat:no-repeat;
+		background-attachment:fixed;
+		background:opacity:50%;
+		
+		color:#6C3365;
+		font-family:"Microsoft YaHei";
+		font-size:14px;
+		font-weight:bold;
+		z-index:-1;
+	}
+	
+	.direction{
+		-webkit-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+		
+		padding-top:50px;
+		padding-left:20px;
+		position:absolute;
+		top:230px;
+		left:354px;
+		height:400px;
+		width:500px;
+		
+		-webkit-transform: rotateX(65deg) rotateZ(90deg) translate3d(0,-220px,0);
+		transform: rotateX(65deg) rotateZ(90deg) translate3d(0,-220px,0);	
+		z-index:-1;
+	}
+	.speed-table{
+		line-height:20px;
+		padding-top:50px;
+		padding-left:20px;
+		position:absolute;
+		top:320px;
+		left:20px;
+		height:600px;
+		width:300px;		
+		z-index:1;
+	}
+	.speed-pin{
+		
+		position:absolute;
+		top:370px;
+		left:40px;
+		height:200px;
+		width:200px;
+		-webkit-transform: rotateZ(89.6deg);
+		transform: rotateZ(89.6deg);	
+		z-index:2;
+	}
+	
+	.map{
+		position:absolute;
+		height:1000px;
+		width:1350px;	
+		z-index:-10;
+
+	}
+	
+	
+	.ConnectArea{
+		line-height:20px;
+		padding-left:20px;
+		position:absolute;
+		float:left;
+		top:20px;
+		height:180px;
+		width:350px;
+		z-index:0;
+	}
+	
+	.StateArea{   
+		line-height:20px;
+		padding-left:20px;
+		position:absolute;
+		top:200px;
+		height:400px;
+		width:350px;		
+		z-index:0;	
+	}
+
+	.CommandArea{
+		line-height:20px;
+		padding-left:40px;
+		margin-left:75%;
+		float:left;
+		position:absolute;
+		top:10px;
+		height:700px;
+		width:350px;
+		z-index:0;
+	}
+	
+	.leftAreaBG{
+		position:absolute;
+		float:left;
+		top:-10px;
+		left:-10px;
+		height:100%;
+		width:450px;
+		background-image: linear-gradient(to left,rgba(255,255,255,0),rgba(255,255,255,1));
+		z-index:-1;
+		
+	}
+	
+	.rightAreaBG{
+		position:absolute;
+		float:left;
+		top:-10px;
+		margin-left:68%;
+		height:100%;
+		width:450px;
+		background-image: linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,1));
+		z-index:-1;	
+	}
+
+	.ImageDiv{
+		position:absolute;
+		line-height:20px;
+		padding-left:0px;
+		margin-left:73%;
+		float:left;
+		top:300px;
+		height:250px;
+		width:330px;
+		z-index:0;
+		background-color:#E1E9E9;	
+	}
+	
+	.button-group{
+		position:absolute;
+		float:left;
+		top:550px;
+		margin-left:68%;
+		height:40px;
+		width:300px;
+		z-index:1;
+	}
+		
