@@ -4,7 +4,7 @@
 		Function: Connect with AWS server for collecting data from MySQL;
 	*******************************************************/
 	
-	var wsUri = "ws://54.179.151.69:80/test2html";				//server IP
+	var wsUri = "ws://127.0.0.1:80/test2html";				//server IP
 	var sh = setInterval("GetRobotInfo(g_robotName)",200);		//operate function"GetRobotInfo(g_robotName)" per 200ms
 	var sh_Image = setInterval("GetImage()",500);
 	var g_robotName="NULL";										//at most 9 robot to set (1-9)								
